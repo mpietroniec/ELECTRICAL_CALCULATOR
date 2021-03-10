@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".electricBalance.BalanceOfRequestPower">
+
+    <TextView
+        android:id="@+id/txt_electric_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/preliminary_balance_of_request_power"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_balance_of_request_power_inputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_electric_balance"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etxt_electric_balance_name_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etxt_electric_balance_surface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/surface"
+                android:inputType="number"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="@string/square_meters"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_power"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etxt_electric_balance_power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/coefficient_power"
+                android:inputType="number"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="kW/m^2"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add_to_balance_of_request_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_balance_of_request_power_inputs"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/add" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_balance_of_request_power"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_balance_of_request_power_total"
+        android:layout_below="@+id/btn_add_to_balance_of_request_power"
+        android:layout_marginTop="15dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_balance_of_request_power_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="-"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

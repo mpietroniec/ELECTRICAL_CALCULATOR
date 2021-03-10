@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ELECTRICAL_CALCULATOR</string>
+    <string name="coefficient_power">Coefficient power</string>
+    <string name="surface">Surface</string>
+    <string name="name">Name</string>
+    <string name="preliminary_balance_of_request_power">Preliminary balance of request power</string>
+    <string name="square_meters">m^2</string>
+    <string name="add">add</string>
+    <string name="total">Total:</string>
+    <string name="details">Details</string>
 </resources>
