@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ELECTRICAL_CALCULATOR</string>
+    <string name="coefficient_power">Współczynnik mocy</string>
+    <string name="surface">Powierzchnia</string>
+    <string name="name">Nazwa</string>
+    <string name="preliminary_balance_of_request_power">Wstępny bilans mocy zapotrzebowanej</string>
+    <string name="square_meters">m^2</string>
+    <string name="add">dodaj</string>
+    <string name="total">W sumie:</string>
+</resources>
