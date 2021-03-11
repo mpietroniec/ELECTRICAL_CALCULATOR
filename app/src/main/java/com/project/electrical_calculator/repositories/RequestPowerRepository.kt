@@ -1,0 +1,43 @@
+package com.project.electrical_calculator.repositories
+
+import android.app.Application
+import androidx.lifecycle.LiveData
+import com.project.electrical_calculator.dao.RequestPowerDao
+import com.project.electrical_calculator.entities.RequestPower
+import com.project.electrical_calculator.helpers.RequestPowerDatabase
+import kotlinx.coroutines.*
+
+class RequestPowerRepository(application: Application) {
+    private var requestPowerDao: RequestPowerDao
+
+    init {
+        val database = RequestPowerDatabase
+            .getInstance(application.applicationContext)
+        requestPowerDao = database!!.requestPowerDao()
+    }
+
+    fun insertRequestPower(requestPower: RequestPower) =
+        CoroutineScope(Dispatchers.IO).launch {
+            requestPowerDao.insert(requestPower)
+        }
+
+    fun updateRequestPower(requestPower: RequestPower) =
+        CoroutineScope(Dispatchers.IO).launch {
+            requestPowerDao.update(requestPower)
+        }
+
+    fun deleteRequestPower(requestPower: RequestPower) =
+        CoroutineScope(Dispatchers.IO).launch {
+            requestPowerDao.delete(requestPower)
+        }
+
+    fun getAllRequestPowerAsync(): Deferred<LiveData<List<RequestPower>>> =
+        CoroutineScope(Dispatchers.IO).async {
+            requestPowerDao.getAllPowers()
+        }
+
+    fun deleteAllRowsRequestPowers() =
+        CoroutineScope(Dispatchers.IO).launch {
+            requestPowerDao.deleteAllRow()
+        }
+}
