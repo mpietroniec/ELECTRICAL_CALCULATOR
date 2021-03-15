@@ -1,15 +1,11 @@
 package com.project.electrical_calculator.adapters
 
-
-import android.content.Context
 import android.content.Intent
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.project.electrical_calculator.R
 import com.project.electrical_calculator.electricBalance.UpdateBalanceOfRequestPower
@@ -21,7 +17,7 @@ var viewModel: RequestPowerViewModel? = null
 
 class RequestPowerAdapter(
     private val listOfRequestPowers: List<RequestPower>,
-   // private val listener: OnItemClickListener
+    // private val listener: OnItemClickListener
 ) :
     RecyclerView.Adapter<RequestPowerAdapter.MyViewHolder>() {
 
@@ -40,7 +36,7 @@ class RequestPowerAdapter(
 //        })
         holder.btnDelete.setOnClickListener {
 
-                viewModel?.deleteRequestPower(listOfRequestPowers[position])
+            viewModel?.deleteRequestPower(listOfRequestPowers[position])
         }
         holder.reqPowerDetails.setOnClickListener {
             val context = holder.reqPowerDetails.context
@@ -63,7 +59,7 @@ class RequestPowerAdapter(
 
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
-       // View.OnClickListener
+    // View.OnClickListener
     {
         val nameTextView: TextView = view.findViewById(R.id.txt_object_name)
         val reqPower: TextView = view.findViewById(R.id.txt_request_power)
