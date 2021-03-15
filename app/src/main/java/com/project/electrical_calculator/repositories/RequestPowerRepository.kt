@@ -26,7 +26,12 @@ class RequestPowerRepository(application: Application) {
             requestPowerDao.update(requestPower)
         }
 
-    fun deleteRequestPower(requestPower: RequestPower) =
+//    fun deleteRequestPower(requestPower: RequestPower) =
+//        CoroutineScope(Dispatchers.IO).launch {
+//            requestPowerDao.delete(requestPower)
+//        }
+
+        fun deleteRequestPower(requestPower: RequestPower) =
         CoroutineScope(Dispatchers.IO).launch {
             requestPowerDao.delete(requestPower)
         }

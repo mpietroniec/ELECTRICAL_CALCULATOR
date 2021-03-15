@@ -3,6 +3,7 @@ package com.project.electrical_calculator.electricBalance
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -41,16 +42,17 @@ class BalanceOfRequestPower : AppCompatActivity() {
             val name = objectName.text.toString()
             val surface = objectSurface.text.toString().toFloat()
             val coefficientPower = objectPower.text.toString().toFloat()
-            val objectRequestPower = surface*coefficientPower
+            val objectRequestPower = surface * coefficientPower
 
             val requestPower = RequestPower(name, surface, coefficientPower, objectRequestPower)
             viewModel.insertRequestPower(requestPower)
         }
 
 //        val deleteButton = findViewById<ImageView>(R.id.deleteRequestPower)
-//        deleteButton.setOnClickListener{
-//            viewModel.deleteRequestPower()
+//        deleteButton.setOnClickListener {
+//            viewModel.deleteRequestPower(requestPowerAdapter.getRequestPower(position = 1))
 //        }
+
 
         recyclerView = findViewById(R.id.rv_balance_of_request_power)
         recyclerView.layoutManager = LinearLayoutManager(applicationContext)
