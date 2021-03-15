@@ -8,7 +8,7 @@ data class RequestPower(
     var name: String,
     var surface: Float,
     var coefficientPower: Float,
-    var requestPower: Float
+    var power: Float
 ) {
     @PrimaryKey(autoGenerate = true)
     var objectNameID: Int = 0
