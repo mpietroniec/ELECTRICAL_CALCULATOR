@@ -21,13 +21,11 @@ abstract class RequestPowerDatabase : RoomDatabase() {
                     "balance_of_request_power"
                 )
                     .fallbackToDestructiveMigration()
+
+                    .allowMainThreadQueries()
                     .build()
             }
             return instance
-        }
-
-        fun deleteInstanceOfDatabase() {
-            instance = null
         }
     }
 }
