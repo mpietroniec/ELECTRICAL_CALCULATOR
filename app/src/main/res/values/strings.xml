@@ -8,4 +8,10 @@
     <string name="add">add</string>
     <string name="total">Total:</string>
     <string name="details">Details</string>
+
+    <string-array name="phases">
+        <item name="one_phase">1-phase</item>
+        <item name="three_phases">3-phases</item>
+    </string-array>
+
 </resources>

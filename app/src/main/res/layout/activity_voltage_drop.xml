@@ -14,4 +14,11 @@
         android:text="Voltage Drop"
         android:textSize="20sp" />
 
+    <Spinner
+        android:id="@+id/spin_phases_voltage_drop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txt_title_voltage_drop"/>
+
 </RelativeLayout>

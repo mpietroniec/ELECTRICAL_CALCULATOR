@@ -11,8 +11,10 @@
 
         <TextView
             android:id="@+id/txt_object_name"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:text="@string/name"
             android:textSize="18sp" />
 
@@ -21,29 +23,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_object_name"
-            android:text="@string/details"
-            android:textSize="18sp"
             android:clickable="true"
             android:focusable="true"
+            android:text="@string/details"
+            android:textSize="18sp"
             app:drawableEndCompat="@drawable/ic_baseline_arrow_right_26" />
 
         <TextView
             android:id="@+id/txt_balance_of_request_power_kW"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           android:layout_toStartOf="@id/deleteRequestPower"
             android:layout_centerVertical="true"
             android:layout_marginEnd="30dp"
+            android:layout_toStartOf="@id/deleteRequestPower"
             android:text="kW"
             android:textSize="28sp" />
 
         <TextView
             android:id="@+id/txt_request_power"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginEnd="15dp"
             android:layout_toStartOf="@+id/txt_balance_of_request_power_kW"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
             android:text="0"
             android:textSize="28sp" />
 
@@ -51,12 +56,12 @@
             android:id="@+id/deleteRequestPower"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/ic_baseline_delete_26"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"/>
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_baseline_delete_26" />
 
     </RelativeLayout>
 

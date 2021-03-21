@@ -15,7 +15,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".electricBalance.UpdateBalanceOfRequestPower"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".electricBalance.BalanceOfRequestPower" />
         <activity
             android:name=".electricBalance.BalanceOfRequestPower"
             android:parentActivityName=".MainActivity" />
