@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "balance_of_request_power")
 data class RequestPower(
+    var id: Long,
     var name: String,
     var surface: Float,
     var coefficientPower: Float,

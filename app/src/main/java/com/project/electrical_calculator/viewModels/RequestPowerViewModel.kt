@@ -20,19 +20,29 @@ class RequestPowerViewModel(application: Application) :
         requestPowerRepository.insertRequestPower(requestPower)
     }
 
-    fun updateRequestPower(requestPower: RequestPower){
+    fun updateRequestPower(requestPower: RequestPower) {
         requestPowerRepository.updateRequestPower(requestPower)
     }
 
-    fun deleteRequestPower(requestPower: RequestPower){
+    fun deleteRequestPower(requestPower: RequestPower) {
         requestPowerRepository.deleteRequestPower(requestPower)
     }
+
+//    fun sumRequestPowers(){
+//        requestPowerRepository.sumRequestPowersAsync()
+//    }
+
+//    fun sumRequestPowers(): LiveData<List<RequestPower>> = runBlocking {
+//        sumRequestPowers()
+//    }
 
     fun getAllRequests(): LiveData<List<RequestPower>> = runBlocking {
         allRequestPower.await()
     }
 
-    fun deleteAllRequests(){
+    fun deleteAllRequests() {
         requestPowerRepository.deleteAllRowsRequestPowers()
     }
+
+    fun get(id: Long) = requestPowerRepository.get(id)
 }
