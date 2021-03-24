@@ -26,12 +26,21 @@ class RequestPowerRepository(application: Application) {
             requestPowerDao.update(requestPower)
         }
 
-//    fun deleteRequestPower(requestPower: RequestPower) =
+//    fun sumRequestPowers() =
 //        CoroutineScope(Dispatchers.IO).launch {
-//            requestPowerDao.delete(requestPower)
+//            requestPowerDao.sumAllRequestPowers()
 //        }
 
-        fun deleteRequestPower(requestPower: RequestPower) =
+//    fun sumRequestPowersAsync(): Deferred<LiveData<List<RequestPower>>> =
+//        CoroutineScope(Dispatchers.IO).async {
+//            requestPowerDao.sumAllRequestPowers()
+//        }
+
+    fun get(id: Long): LiveData<RequestPower> {
+        return requestPowerDao.get(id)
+    }
+
+    fun deleteRequestPower(requestPower: RequestPower) =
         CoroutineScope(Dispatchers.IO).launch {
             requestPowerDao.delete(requestPower)
         }

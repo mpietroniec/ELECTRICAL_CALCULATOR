@@ -21,4 +21,10 @@ interface RequestPowerDao {
 
     @Query("DELETE FROM balance_of_request_power")
     fun deleteAllRow()
+
+    @Query("SELECT * FROM balance_of_request_power WHERE balance_of_request_power.id == :id")
+    fun get(id: Long): LiveData<RequestPower>
+
+//    @Query("Select *, SUM(power) FROM balance_of_request_power")
+//    fun sumAllRequestPowers(): LiveData<List<RequestPower>>
 }

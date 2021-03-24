@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Update request power"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <LinearLayout
         android:id="@+id/ll_update_balance_of_request_power_inputs"
@@ -24,10 +24,11 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/etxt_update_electric_balance_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <LinearLayout
             android:id="@+id/ll_update_surface"
@@ -80,5 +81,13 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_update_balance_of_request_power_inputs"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:text="update" />
 
 </RelativeLayout>

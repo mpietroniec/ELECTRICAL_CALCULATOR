@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.project.electrical_calculator.R
+import com.project.electrical_calculator.electricBalance.Constants
 import com.project.electrical_calculator.electricBalance.UpdateBalanceOfRequestPower
 import com.project.electrical_calculator.entities.RequestPower
 
@@ -29,9 +30,12 @@ class RequestPowerAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.reqPowerDetails.setOnClickListener {
+        holder.reqPowerDetails.setOnClickListener { v ->
+            val item = v.tag as? RequestPower
             val context = holder.reqPowerDetails.context
-            val intent = Intent(context, UpdateBalanceOfRequestPower::class.java)
+            val intent = Intent(context, UpdateBalanceOfRequestPower::class.java).apply {
+                putExtra(Constants.DATA_RECORD_ID, item?.id)
+            }
             context.startActivity(intent)
         }
         holder.bind(listOfRequestPowers[position])
@@ -54,9 +58,6 @@ class RequestPowerAdapter(
             btnDelete.setOnClickListener {
                 listener.onDeleteRequestClickListener(data)
             }
-//            reqPowerDetails.setOnClickListener {
-//                listener.onItemClickListener(data)
-//            }
         }
     }
 
