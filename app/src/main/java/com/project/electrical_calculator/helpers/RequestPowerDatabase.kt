@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.project.electrical_calculator.dao.RequestPowerDao
 import com.project.electrical_calculator.entities.RequestPower
 
-@Database(entities = [RequestPower::class], version = 3, exportSchema = false)
+@Database(entities = [RequestPower::class], version = 4, exportSchema = false)
 abstract class RequestPowerDatabase : RoomDatabase() {
     abstract fun requestPowerDao(): RequestPowerDao
 
