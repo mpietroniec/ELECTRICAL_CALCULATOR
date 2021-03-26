@@ -3,6 +3,7 @@ package com.project.electrical_calculator.electricBalance
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.project.electrical_calculator.R
@@ -27,16 +28,17 @@ class UpdateBalanceOfRequestPower : AppCompatActivity() {
             .getInstance(application)
             .create(RequestPowerViewModel::class.java)
 
-        val requestPower: RequestPower? = intent.getParcelableExtra(REQUEST_POWER_NAME)
+        val requestPower: RequestPower = intent.getParcelableExtra(REQUEST_POWER_NAME)!!
 
         val updateName = findViewById<EditText>(R.id.etxt_update_electric_balance_name)
         val updateSurface = findViewById<EditText>(R.id.etxt_update_electric_balance_surface)
         val updateCoefficientPower = findViewById<EditText>(R.id.etxt_update_electric_balance_power)
+val updatePower = findViewById<TextView>(R.id.txt_update_power)
 
-
-        updateName.setText(requestPower?.name)
-        updateSurface.setText(requestPower?.surface.toString())
-        updateCoefficientPower.setText(requestPower?.coefficientPower.toString())
+        updateName.setText(requestPower.name)
+        updateSurface.setText(requestPower.surface.toString())
+        updateCoefficientPower.setText(requestPower.coefficientPower.toString())
+        updatePower.text = requestPower.power.toString()
 
 //        val btnUpdate = findViewById<Button>(R.id.btn_update)
 //        btnUpdate.setOnClickListener {

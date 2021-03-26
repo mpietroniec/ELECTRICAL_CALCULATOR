@@ -1,9 +1,13 @@
 package com.project.electrical_calculator.electricBalance
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -65,6 +69,23 @@ class BalanceOfRequestPower : AppCompatActivity(), RequestPowerAdapter.RowItemCl
         })
 //        viewModel = ViewModelProviders.of(this).get(RequestPowerViewModel::class.java)
 //        totalPower.text = viewModel.sumRequestPowers().toString()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_info_request_power, menu)
+        return true
+    }
+
+    fun startRequestPowerInfo(item: MenuItem) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Calculation method")
+        builder.setMessage("...")
+        builder.setNeutralButton("OK") {_,_ ->
+
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     override fun onDeleteRequestClickListener(requestPower: RequestPower) {

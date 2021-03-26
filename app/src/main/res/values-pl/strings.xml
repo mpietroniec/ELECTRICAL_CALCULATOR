@@ -8,4 +8,5 @@
     <string name="square_meters">m^2</string>
     <string name="add">dodaj</string>
     <string name="total">W sumie:</string>
+    <string name="details">Szczegóły</string>
 </resources>
