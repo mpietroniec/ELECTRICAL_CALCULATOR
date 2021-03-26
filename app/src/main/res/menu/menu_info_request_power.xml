@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_info_request_power"
+        android:icon="@drawable/ic_baseline_info_26"
+        android:title="Information on calculating the power demand."
+        app:showAsAction="ifRoom"
+        android:onClick="startRequestPowerInfo"/>
+</menu>
