@@ -6,13 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import com.project.electrical_calculator.cableSelection.CableSelection
 import com.project.electrical_calculator.electricBalance.BalanceOfRequestPower
-import com.project.electrical_calculator.voltageDrop.VoltageDrop
-
-private lateinit var btnElectricBalance: Button
-private lateinit var btnVoltageDrop:Button
-private lateinit var btnCableSelection: Button
+import com.project.electrical_calculator.voltageDrop.TotalVoltageDrop
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var btnElectricBalance: Button
+    private lateinit var btnVoltageDrop:Button
+    private lateinit var btnCableSelection: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         btnVoltageDrop = findViewById(R.id.btn_voltage_drop)
         btnVoltageDrop.setOnClickListener {
-            val intent = Intent(this,VoltageDrop::class.java)
+            val intent = Intent(this,TotalVoltageDrop::class.java)
             startActivity(intent)
         }
 

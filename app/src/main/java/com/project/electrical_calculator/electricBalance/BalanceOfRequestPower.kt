@@ -37,8 +37,6 @@ class BalanceOfRequestPower : AppCompatActivity(), RequestPowerAdapter.RowItemCl
         val objectName = findViewById<EditText>(R.id.etxt_electric_balance_name_item)
         val objectSurface = findViewById<EditText>(R.id.etxt_electric_balance_surface)
         val objectPower = findViewById<EditText>(R.id.etxt_electric_balance_power)
-        var totalPower = findViewById<TextView>(R.id.txt_total_power)
-
 
         val addButton = findViewById<Button>(R.id.btn_add_to_balance_of_request_power)
         addButton.setOnClickListener {

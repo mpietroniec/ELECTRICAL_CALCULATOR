@@ -12,7 +12,7 @@ import com.project.electrical_calculator.electricBalance.UpdateBalanceOfRequestP
 import com.project.electrical_calculator.entities.RequestPower
 
 class RequestPowerAdapter(
-    val listener: RowItemClickListener
+    private val listener: RowItemClickListener
 ) : RecyclerView.Adapter<RequestPowerAdapter.MyViewHolder>() {
 
     var listOfRequestPowers = ArrayList<RequestPower>()
@@ -43,12 +43,12 @@ class RequestPowerAdapter(
         return listOfRequestPowers.size
     }
 
-    inner class MyViewHolder(view: View, val listener: RowItemClickListener) :
+    inner class MyViewHolder(view: View, private val listener: RowItemClickListener) :
         RecyclerView.ViewHolder(view) {
-        val nameTextView: TextView = view.findViewById(R.id.txt_object_name)
-        val reqPower: TextView = view.findViewById(R.id.txt_request_power)
+        private val nameTextView: TextView = view.findViewById(R.id.txt_object_name)
+        private val reqPower: TextView = view.findViewById(R.id.txt_request_power)
         val reqPowerDetails: TextView = view.findViewById(R.id.txt_request_power_details)
-        val btnDelete: ImageView = view.findViewById(R.id.deleteRequestPower)
+        private val btnDelete: ImageView = view.findViewById(R.id.deleteRequestPower)
 
         fun bind(data: RequestPower) {
             nameTextView.text = data.name
@@ -61,7 +61,5 @@ class RequestPowerAdapter(
 
     interface RowItemClickListener {
         fun onDeleteRequestClickListener(requestPower: RequestPower)
-        //   fun onItemClickListener(requestPower: RequestPower)
     }
-
 }
