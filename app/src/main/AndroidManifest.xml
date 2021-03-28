@@ -16,6 +16,8 @@
             android:name=".voltageDrop.TotalVoltageDrop"
             android:label="VOLTAGE DROP"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".voltageDrop.UpdateVoltageDrop"
+            android:parentActivityName=".voltageDrop.TotalVoltageDrop"/>
         <activity
             android:name=".electricBalance.UpdateBalanceOfRequestPower"
             android:label="UPDATE REQUEST POWER"

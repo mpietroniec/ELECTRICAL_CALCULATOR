@@ -12,7 +12,6 @@ import com.project.electrical_calculator.viewModels.RequestPowerViewModel
 
 class UpdateBalanceOfRequestPower : AppCompatActivity() {
 
-    lateinit var requestPower: RequestPower
     private lateinit var viewModel: RequestPowerViewModel
 
     companion object {
@@ -21,7 +20,7 @@ class UpdateBalanceOfRequestPower : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_update_balance_of_request_power)
+        setContentView(R.layout.activity_balance_of_request_power_update)
 
         viewModel = ViewModelProvider
             .AndroidViewModelFactory
@@ -33,7 +32,7 @@ class UpdateBalanceOfRequestPower : AppCompatActivity() {
         val updateName = findViewById<EditText>(R.id.etxt_update_electric_balance_name)
         val updateSurface = findViewById<EditText>(R.id.etxt_update_electric_balance_surface)
         val updateCoefficientPower = findViewById<EditText>(R.id.etxt_update_electric_balance_power)
-val updatePower = findViewById<TextView>(R.id.txt_update_power)
+        val updatePower = findViewById<TextView>(R.id.txt_update_power)
 
         updateName.setText(requestPower.name)
         updateSurface.setText(requestPower.surface.toString())
