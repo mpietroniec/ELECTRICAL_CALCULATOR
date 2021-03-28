@@ -16,6 +16,7 @@ import com.project.electrical_calculator.R
 import com.project.electrical_calculator.adapters.VoltageDropAdapter
 import com.project.electrical_calculator.entities.VoltageDrop
 import com.project.electrical_calculator.viewModels.VoltageDropViewModel
+import java.text.DecimalFormat
 
 class TotalVoltageDrop : AppCompatActivity(), VoltageDropAdapter.VoltageDropRowItemClickListener,
     AdapterView.OnItemSelectedListener {
@@ -53,7 +54,8 @@ class TotalVoltageDrop : AppCompatActivity(), VoltageDropAdapter.VoltageDropRowI
         val voltageDropCableLength = findViewById<EditText>(R.id.etxt_cable_length)
         val voltageDropCableCross = findViewById<EditText>(R.id.etxt_cable_cross_section)
 
-        fun abc(): Float {
+        fun voltageDropCalculation(): Float {
+            val decimalFormat = DecimalFormat("##.##")
             if (spinnerPhase.selectedItem.toString() == "1-phase") {
                 maxVoltageDrop = if (spinnerMaterial.selectedItem.toString() == "Cu") {
                     (200 *
@@ -79,7 +81,8 @@ class TotalVoltageDrop : AppCompatActivity(), VoltageDropAdapter.VoltageDropRowI
                             ) / (33 * voltageDropCableCross.text.toString().toFloat() * 400 * 400)
                 }
             }
-            return maxVoltageDrop
+            val decValue = decimalFormat.format(maxVoltageDrop)
+            return decValue.toFloat()
         }
 
         val addVoltageDropButton = findViewById<Button>(R.id.btn_add_to_voltage_drop)
@@ -90,7 +93,7 @@ class TotalVoltageDrop : AppCompatActivity(), VoltageDropAdapter.VoltageDropRowI
             val power = voltageDropPower.text.toString().toFloat()
             val length = voltageDropCableLength.text.toString().toFloat()
             val cableCrossSection = voltageDropCableCross.text.toString().toFloat()
-            val voltageDropValue = abc()
+            val voltageDropValue = voltageDropCalculation()
             val voltageDrop =
                 VoltageDrop(id, phase, material, power, length, cableCrossSection, voltageDropValue)
             voltageDropViewModel.insertVoltageDrop(voltageDrop)
@@ -135,11 +138,11 @@ class TotalVoltageDrop : AppCompatActivity(), VoltageDropAdapter.VoltageDropRowI
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        TODO("Not yet implemented")
+
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
+
     }
 }
 
