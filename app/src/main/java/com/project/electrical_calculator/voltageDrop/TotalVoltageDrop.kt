@@ -70,12 +70,12 @@ class TotalVoltageDrop : AppCompatActivity(), VoltageDropAdapter.VoltageDropRowI
                 }
             } else {
                 maxVoltageDrop = if (spinnerMaterial.selectedItem.toString() == "Cu") {
-                    (200 *
+                    (100 *
                             voltageDropPower.text.toString()
                                 .toFloat() * 1000 * voltageDropCableLength.text.toString().toFloat()
                             ) / (56 * voltageDropCableCross.text.toString().toFloat() * 400 * 400)
                 } else {
-                    (200 *
+                    (100 *
                             voltageDropPower.text.toString()
                                 .toFloat() * 1000 * voltageDropCableLength.text.toString().toFloat()
                             ) / (33 * voltageDropCableCross.text.toString().toFloat() * 400 * 400)
