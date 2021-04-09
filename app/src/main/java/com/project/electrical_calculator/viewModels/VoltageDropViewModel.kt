@@ -20,6 +20,10 @@ class VoltageDropViewModel(application: Application) :
         voltageDropRepository.insertVoltageDrop(voltageDrop)
     }
 
+    fun updateVoltageDrop(voltageDrop: VoltageDrop) {
+        voltageDropRepository.updateVoltageDrop(voltageDrop)
+    }
+
     fun get(id: Long) = voltageDropRepository.get(id)
 
     fun deleteVoltageDrop(voltageDrop: VoltageDrop) {

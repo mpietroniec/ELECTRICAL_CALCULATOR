@@ -10,8 +10,8 @@ interface RequestPowerDao {
     @Insert
     fun insert(requestPower: RequestPower)
 
-    @Update
-    fun update(requestPower: RequestPower)
+    @Query("UPDATE balance_of_request_power SET name = :sName, surface = :sAmount, coefficientPower = :sCoefficientPower, power = :sPower WHERE id = :sId")
+    fun update(sId: Long, sName: String, sAmount: Float, sCoefficientPower: Float, sPower: Float)
 
     @Delete
     fun delete(requestPower: RequestPower)

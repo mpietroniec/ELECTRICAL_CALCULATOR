@@ -21,6 +21,19 @@ class VoltageDropRepository(application: Application) {
             voltageDropDao.insertVoltageDrop(voltageDrop)
         }
 
+    fun updateVoltageDrop(voltageDrop: VoltageDrop) =
+        CoroutineScope(Dispatchers.IO).launch {
+            voltageDropDao.updateVoltageDrop(
+                voltageDrop.id,
+                voltageDrop.phase,
+                voltageDrop.material,
+                voltageDrop.length,
+                voltageDrop.power,
+                voltageDrop.cableCrossSection,
+                voltageDrop.voltageDrop
+            )
+        }
+
     fun get(id: Long): LiveData<VoltageDrop> {
         return voltageDropDao.get(id)
     }

@@ -10,8 +10,16 @@ interface VoltageDropDao {
     @Insert
     fun insertVoltageDrop(voltageDrop: VoltageDrop)
 
-    @Update
-    fun updateVoltageDrop(voltageDrop: VoltageDrop)
+    @Query("UPDATE voltage_drop SET phase = :sPhase, material = :sMaterial, power = :sPower, length = :sLength, cableCrossSection = :sCableCrossSection, voltageDrop = :sVoltageDrop WHERE id = :sID")
+    fun updateVoltageDrop(
+        sId: Long,
+        sPhase: String,
+        sMaterial: String,
+        sPower: Float,
+        sLength: Float,
+        sCableCrossSection: Float,
+        sVoltageDrop: Float
+    )
 
     @Delete
     fun deleteVoltageDrop(voltageDrop: VoltageDrop)
