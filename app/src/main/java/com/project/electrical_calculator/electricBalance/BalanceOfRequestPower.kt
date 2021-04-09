@@ -48,6 +48,11 @@ class BalanceOfRequestPower : AppCompatActivity(), RequestPowerAdapter.RowItemCl
 
             val requestPower = RequestPower(id, name, surface, coefficientPower, power)
             viewModel.insertRequestPower(requestPower)
+
+            objectName.setText("")
+            objectSurface.setText("")
+            objectPower.setText("")
+
         }
 
         val deleteAllButton = findViewById<TextView>(R.id.txt_delete_all)

@@ -23,7 +23,13 @@ class RequestPowerRepository(application: Application) {
 
     fun updateRequestPower(requestPower: RequestPower) =
         CoroutineScope(Dispatchers.IO).launch {
-            requestPowerDao.update(requestPower)
+            requestPowerDao.update(
+                requestPower.id,
+                requestPower.name,
+                requestPower.surface,
+                requestPower.coefficientPower,
+                requestPower.power
+            )
         }
 
 //    fun sumRequestPowers() =
