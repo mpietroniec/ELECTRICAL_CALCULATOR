@@ -47,15 +47,13 @@ class UpdateBalanceOfRequestPower : AppCompatActivity() {
             val coefficientPower = updateCoefficientPower.text.toString().toFloat()
             val power = surface * coefficientPower
 
-            val reqPower = id?.let { it1 ->
-                RequestPower(
-                    id = it1,
-                    name = name,
-                    surface = surface,
-                    coefficientPower = coefficientPower,
-                    power = power
-                )
-            }
+            val reqPower = RequestPower(
+                id = id,
+                name = name,
+                surface = surface,
+                coefficientPower = coefficientPower,
+                power = power
+            )
             viewModel.updateRequestPower(reqPower)
             finish()
         }
