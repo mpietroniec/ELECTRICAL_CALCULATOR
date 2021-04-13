@@ -29,7 +29,7 @@ class RequestPowerAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.reqPowerDetails.setOnClickListener { v ->
+        holder.reqPowerDetails.setOnClickListener {
             val context = holder.reqPowerDetails.context
             val requestPower = listOfRequestPowers[position]
             val intent = Intent(context, UpdateBalanceOfRequestPower::class.java)

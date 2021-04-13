@@ -134,7 +134,17 @@ class TotalVoltageDrop : AppCompatActivity(), VoltageDropAdapter.VoltageDropRowI
     }
 
     override fun onDeleteVoltageDropClickListener(voltageDrop: VoltageDrop) {
-        voltageDropViewModel.deleteVoltageDrop(voltageDrop)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Delete this?")
+        builder.setMessage("Are you sure you want to delete this?")
+        builder.setPositiveButton("Yes") { _, _ ->
+            voltageDropViewModel.deleteVoltageDrop(voltageDrop)
+        }
+        builder.setNegativeButton("No") { _, _ ->
+
+        }
+        builder.show()
+
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

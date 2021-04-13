@@ -28,7 +28,7 @@ class VoltageDropAdapter(
     }
 
     override fun onBindViewHolder(holder: VoltageDropViewHolder, position: Int) {
-        holder.voltageDropDetails.setOnClickListener { v ->
+        holder.voltageDropDetails.setOnClickListener {
             val context = holder.voltageDropDetails.context
             val voltageDrop = listOfVoltageDrops[position]
             val intent  = Intent(context, UpdateVoltageDrop::class.java)

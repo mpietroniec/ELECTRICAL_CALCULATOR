@@ -57,7 +57,16 @@ class BalanceOfRequestPower : AppCompatActivity(), RequestPowerAdapter.RowItemCl
 
         val deleteAllButton = findViewById<TextView>(R.id.txt_delete_all)
         deleteAllButton.setOnClickListener {
-            viewModel.deleteAllRequests()
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Delete all?")
+            builder.setMessage("Are you sure you want to delete everything?")
+            builder.setPositiveButton("Yes") { _, _ ->
+                viewModel.deleteAllRequests()
+            }
+            builder.setNegativeButton("No") { _, _ ->
+
+            }
+            builder.show()
         }
 
         recyclerView = findViewById(R.id.rv_balance_of_request_power)
@@ -84,7 +93,7 @@ class BalanceOfRequestPower : AppCompatActivity(), RequestPowerAdapter.RowItemCl
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Calculation method")
         builder.setMessage("...")
-        builder.setNeutralButton("OK") {_,_ ->
+        builder.setNeutralButton("OK") { _, _ ->
 
         }
         val dialog: AlertDialog = builder.create()
@@ -92,7 +101,17 @@ class BalanceOfRequestPower : AppCompatActivity(), RequestPowerAdapter.RowItemCl
     }
 
     override fun onDeleteRequestClickListener(requestPower: RequestPower) {
-        viewModel.deleteRequestPower(requestPower)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Delete this?")
+        builder.setMessage("Are you sure you want to delete this?")
+        builder.setPositiveButton("Yes") { _, _ ->
+            viewModel.deleteRequestPower(requestPower)
+        }
+        builder.setNegativeButton("No") { _, _ ->
+
+        }
+        builder.show()
+
     }
 }
 

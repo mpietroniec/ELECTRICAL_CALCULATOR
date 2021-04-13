@@ -4,14 +4,14 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import com.project.electrical_calculator.dao.VoltageDropDao
 import com.project.electrical_calculator.entities.VoltageDrop
-import com.project.electrical_calculator.helpers.RequestPowerDatabase
+import com.project.electrical_calculator.helpers.ElectricalCalculatorDatabase
 import kotlinx.coroutines.*
 
 class VoltageDropRepository(application: Application) {
     private var voltageDropDao: VoltageDropDao
 
     init {
-        val database = RequestPowerDatabase
+        val database = ElectricalCalculatorDatabase
             .getInstance(application.applicationContext)
         voltageDropDao = database!!.voltageDropDao()
     }

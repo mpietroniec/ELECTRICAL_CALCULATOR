@@ -4,14 +4,14 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import com.project.electrical_calculator.dao.RequestPowerDao
 import com.project.electrical_calculator.entities.RequestPower
-import com.project.electrical_calculator.helpers.RequestPowerDatabase
+import com.project.electrical_calculator.helpers.ElectricalCalculatorDatabase
 import kotlinx.coroutines.*
 
 class RequestPowerRepository(application: Application) {
     private var requestPowerDao: RequestPowerDao
 
     init {
-        val database = RequestPowerDatabase
+        val database = ElectricalCalculatorDatabase
             .getInstance(application.applicationContext)
         requestPowerDao = database!!.requestPowerDao()
     }

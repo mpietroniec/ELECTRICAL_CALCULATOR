@@ -10,7 +10,7 @@ interface VoltageDropDao {
     @Insert
     fun insertVoltageDrop(voltageDrop: VoltageDrop)
 
-    @Query("UPDATE voltage_drop SET phase = :sPhase, material = :sMaterial, power = :sPower, length = :sLength, cableCrossSection = :sCableCrossSection, voltageDrop = :sVoltageDrop WHERE id = :sID")
+    @Query("UPDATE voltage_drop SET phase = :sPhase, material = :sMaterial, power = :sPower, length = :sLength, cableCrossSection = :sCableCrossSection, voltageDrop = :sVoltageDrop WHERE id = :sId")
     fun updateVoltageDrop(
         sId: Long,
         sPhase: String,
